@@ -1,6 +1,6 @@
 <div class="list-group">
     <a href="/admin/dashboard"
-       class="list-group-item"><h3><i class="fa fa-dashboard"></i> Admin Dashibodi</h3></a>
+       class="list-group-item"><h3><i class="fa fa-dashboard"></i> Dashboard</h3></a>
     <a href="/admin/locations"
        class="list-group-item @if(Request::is('admin/locations')) active @endif"><i
                 class="fa fa-angle-double-right"></i> Maeneo</a>
@@ -23,3 +23,15 @@
        class="list-group-item @if(Request::is('admin/plot-assignments')) active @endif"><i
                 class="fa fa-angle-double-right"></i> Viwanja</a>
 </div>
+
+
+        <div class="list-group">
+            <a href="{{ url('admin/roles') }}" class="list-group-item @if(Request::is('admin/roles')) active @endif">Roles</a>
+            <a href="{{ url('admin/permissions') }}" class="list-group-item @if(Request::is('admin/permissions')) active @endif">Permissions</a>
+            <a href="{{ url('admin/staff') }}" class="list-group-item @if(Request::is('admin/staff')) active @endif">Staff</a>
+        </div>
+
+<div class="list-group">
+	<a href="{{ url('reports/reservations') }}" target="_blank" class="list-group-item"><i class="fa fa-file-text-o"></i> Reports</a>
+</div>
+

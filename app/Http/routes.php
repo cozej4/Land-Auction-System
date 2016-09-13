@@ -126,8 +126,20 @@ Route::post('/createreservationsessioncontroller', 'CreateReservationSessionCont
 
 $router->group([
     'namespace' => 'reports'
-], function(){
+], function () {
     Route::get('/reports/reservations', 'ReservationController@index');
     Route::get('/reports/clients', 'ClientController@index');
     Route::get('/reports/clients/{id}', 'ClientController@show');
+});
+
+$router->group([
+    'namespace' => 'Admin'
+], function () {
+    Route::resource('admin/staff', 'UserController');
+    Route::post('admin/staff/attachRole', 'UserController@attachRole');
+
+    Route::resource('admin/roles', 'RoleController');
+    Route::post('admin/roles/attachPermission', 'RoleController@attachPermission');
+
+    Route::resource('admin/permissions', 'PermissionController');
 });
