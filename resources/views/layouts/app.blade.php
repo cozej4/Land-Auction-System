@@ -27,7 +27,10 @@
             padding: 0 0;
             margin: 0 0;
             font-family: 'OpenSans-Regular';
-
+            background-color: #f0f0f0;
+        }
+        .container {
+            background-color: #FFF;
         }
 
         li.list-group-item:hover,
@@ -51,6 +54,14 @@
             .dropdown-lr label {
                 color: #eee;
             }
+        }
+
+        .footer {
+            padding: 0.5%;
+            font-weight: bold;
+            background-color: rgba(114, 186, 219, 1);
+            color: #FFF;
+            margin-bottom: 10px;
         }
 
     </style>
@@ -107,13 +118,14 @@
 
 
                 <ul class="nav navbar-nav navbar-right">
+                    <li><a href="{{ url('login') }}">Wafanyakazi</a></li>
                     <!-- Authentication Links -->
                     @if (!Session::has('username'))
                         <li @if(Request::is('applicants/register')) class="active" @endif><a
                                     href="{{ url('/applicants/register') }}">Jisajili</a></li>
 
                         <li @if(Request::is('applicants/login')) class="dropdown" @endif>
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Ingia <span class="caret"></span></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Ingia</a>
                             <ul class="dropdown-menu dropdown-lr animated slideInRight" role="menu">
                                 <div class="col-lg-12">
                                     <div class="text-center">
@@ -163,6 +175,7 @@
                             </ul>
                         </li>
                     @endif
+                    
                 </ul>
 
 
@@ -187,6 +200,14 @@
 {{--//Notification--}}
 
 @yield('content')
+
+<div class="container footer">
+    <div class="row">
+        <div class="col-sm-12 text-center">
+            CDA Plots <i class="fa fa-copyright"></i> <?=date('Y')?> All Rights Reserved
+        </div>
+    </div>
+</div>
 
         <!-- JavaScripts -->
 <script src="/js/bootstrap.min.js"></script>

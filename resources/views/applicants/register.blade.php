@@ -67,7 +67,7 @@
                         {!! Form::close() !!}
                     </div>
                     <div class="panel-footer">
-                        Umeshajiandikisha? Ingia <a href="/applicants/login">hapa</a>.
+                        Kama umeshajisajili bonyeza <a href="/applicants/login">hapa</a>.
                     </div>
                 </div>
             </div>
